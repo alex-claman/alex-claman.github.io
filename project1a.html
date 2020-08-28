@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>CSC401 - Project 1A</title>
+		<link rel='stylesheet' type="text/css" href='/~abc/resources/css/project1a.css'>
+    <link rel="icon" type="image/png" href="/~abc/resources/images/favicon.png">
+		<script type="text/javascript" src='./../resources/js/project1a.js'></script>
+	</head>
+	<body>
+		<h1>
+			CSC 401 - Algorithms Practicum
+		</h1>
+		<hr>
+		<p class='body-text'>
+			This is my practice website, constructed using HTML, CSS, and JavaScript, to create visualizations of the algorithms we use in class.
+		</p>
+		<hr>
+		<h2>
+			Project 1A: Enter Name
+		</h2>
+		<p class='body-text'>
+			Instead of creating a page that writes a little message to encapsulate an entered name, I have created a page that show hexadecimal, octal, and binary representations of entered strings in real time. Of course, this works on names perfectly well!
+		</p>
+		<form name ='textconverter' action='' method='get'>
+			<table id='binary-table'>
+				<colgroup>
+					<col id="first">
+					<col id="second">
+				</colgroup>
+    			<tr>
+      				<td>
+      					<label class='right-align'>
+							Text to Convert
+						</label>
+					</td>
+      				<td>
+      					<input type="text" name="inputbox" onkeyup="convertAndWriteHex(this.form.inputbox.value, 'hexOutput');convertAndWriteOct(this.form.inputbox.value, 'octOutput');convertAndWriteBinary(this.form.inputbox.value, 'binaryOutput')">
+      				</td>
+    			</tr>
+    			<tr>
+      				<td>
+      					<label class='right-align'>
+      						Hexadecimal
+      					</label>
+      				</td>
+      				<td>
+      					<div class='box'>
+      						<p id="hexOutput" class='left-align'></p>
+      					</div>
+      				</td>
+    			</tr>
+    			<tr>
+      				<td>
+      					<label class='right-align'>
+      						Octal
+      					</label>
+      				</td>
+      				<td>
+      					<div class='box'>
+      						<p id="octOutput" class='left-align'></p>
+      					</div>
+      				</td>
+    			</tr>
+    			<tr>
+      				<td>
+      					<label class='right-align'>
+      						Binary
+      					</label>
+      				</td>
+      				<td>
+      					<div class='box'>
+      						<p id="binaryOutput" class='left-align'></p>
+      					</div>
+      				</td>
+    			</tr>
+    		</table>
+		</form>
+		<hr>
+    <ul>
+      <li><a href="/~abc/index.html.en">Home</a></li>
+      <li><a class='active' href="/~abc/projects/project1a">Project 1A</a></li>
+      <li><a href="/~abc/projects/project1b">Project 1B</a></li>
+      <li><a href="/~abc/error.html">Project 2</a></li>
+      <li><a href="/~abc/error.html">Project 3</a></li>
+    </ul>
+	</body>
+</html>

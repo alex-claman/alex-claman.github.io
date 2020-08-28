@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>CSC401 - Project 1B</title>
+		<link rel='stylesheet' type="text/css" href='/~abc/resources/css/project1b.css'>
+    <link rel="icon" type="image/png" href="/~abc/resources/images/favicon.png">
+		<script type="text/javascript" src='./../resources/js/project1b.js'></script>
+	</head>
+	<body>
+		<h1>
+			CSC 401 - Algorithms Practicum
+		</h1>
+		<hr>
+		<p class='body-text'>
+			This is my practice website, constructed using HTML, CSS, and JavaScript, to create visualizations of the algorithms we use in class.
+		</p>
+		<hr>
+		<h2>
+			Project 1B: Number Build
+		</h2>
+		<p class='body-text'>
+			Instead of recreating the Number Build site, I figured I'd use the HTML Canvas object, alongside JavaScript, to visualize the changes made to the numbers.
+		</p>
+    <hr>
+    <div class='visualizer-bounds'>
+      <h2>
+        Number Build Visualizer
+      </h2>
+  		<ul id='buttons-table'>
+        <li><button id='1' class='but' onclick='toggleButtonColor(1, "myCanvas", "buttons-table")'>
+            1
+          </button>
+        </li>
+        <li>
+          <button id='2' class='but' onclick='toggleButtonColor(2, "myCanvas", "buttons-table")'>
+            2
+          </button>
+        </li>
+        <li>
+          <button id='4' class='but' onclick='toggleButtonColor(4, "myCanvas", "buttons-table")'>
+            4
+          </button>
+        </li>
+        <li>
+          <button id='8' class='but' onclick='toggleButtonColor(8, "myCanvas", "buttons-table")'>
+            8
+          </button>
+        </li>
+        <li>
+          <button id='16' class='but' onclick='toggleButtonColor(16, "myCanvas", "buttons-table")'>
+            16
+          </button>
+        </li>
+        <li>
+          <button id='32' class='but' onclick='toggleButtonColor(32, "myCanvas", "buttons-table")'>
+            32
+          </button>
+        </li>
+        <li>
+          <button id='64' class='but' onclick='toggleButtonColor(64, "myCanvas", "buttons-table")'>
+            64
+          </button>
+        </li>
+        <li>
+          <button id='128' class='but' onclick='toggleButtonColor(128, "myCanvas", "buttons-table")'>
+            128
+          </button>
+        </li>
+      </ul>
+      <div id="canvasContainer">
+        <canvas id="myCanvas" width='200' height='512'></canvas>
+  		</div>
+    </div>
+    <hr>
+    <p class='body-text'>
+      While working on this project, especially right after creating something that converted strings to their binary representations, I realized that this is just a way of translating the first 255 or so digits into their binary, or base 2, representations. The following example shows the number 105 being converted from binary to decimal, which should look familiar - just like the above visualization. Enjoy! 
+    </p>
+    <ul class='powers-table'>
+      <li><p>1</p></li>
+      <li><p class='grayed'>0</p></li>
+      <li><p class='grayed'>0</p></li>
+      <li><p>1</p></li>
+      <li><p class='grayed'>0</p></li>
+      <li><p>1</p></li>
+      <li><p>1</p></li>
+      <li><p class='grayed'>0</p></li>
+    </ul>
+    <ul class='powers-table'>
+      <li><p>2<sup>0</sup></p></li>
+      <li><p class='grayed'>2<sup>1</sup></p></li>
+      <li><p class='grayed'>2<sup>2</sup></p></li>
+      <li><p>2<sup>3</sup></p></li>
+      <li><p class='grayed'>2<sup>4</sup></p></li>
+      <li><p>2<sup>5</sup></p></li>
+      <li><p>2<sup>6</sup></p></li>
+      <li><p class='grayed'>2<sup>7</sup></p></li>
+    </ul>
+    <ul class='powers-table'>
+      <li><p>1</p></li>
+      <li><p class='grayed'>2</p></li>
+      <li><p class='grayed'>4</p></li>
+      <li><p>8</p></li>
+      <li><p class='grayed'>16</p></li>
+      <li><p>32</p></li>
+      <li><p>64</p></li>
+      <li><p class='grayed'>128</p></li>
+    </ul>
+    <hr>
+    <ul>
+      <li><a href="/~abc/index.html.en">Home</a></li>
+      <li><a href="/~abc/projects/project1a">Project 1A</a></li>
+      <li><a class='active' href="/~abc/projects/project1b">Project 1B</a></li>
+      <li><a href="/~abc/error.html">Project 2</a></li>
+      <li><a href="/~abc/error.html">Project 3</a></li>
+    </ul>
+	</body>
+</html>
