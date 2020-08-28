@@ -15,7 +15,13 @@ function updateCanvas(canvasName, ulName, color) {
 	var rectangles = calculateRectangles(canvasName, ulName);
 	drawAllRectangles(canvasName, color, rectangles);
 	var currentTotal = getSum();
-	drawTextLowerLeft(currentTotal, 40, canvasName, color);
+	var success = checkForUM();
+	if success {
+		drawTextLowerLeft('(19)25', 40, canvasName, color);
+	}
+	else {
+		drawTextLowerLeft(currentTotal, 40, canvasName, color);
+	}
 }
 
 function drawAllRectangles(canvasName, color, coordsList) {
@@ -41,6 +47,37 @@ function drawText(info, canvasName, color) {
 	ctx.font = "30px Arial";
 	ctx.fillStyle = color;
 	ctx.fillText(info[0], info[1], info[2]);
+}
+
+function checkForUM() {
+	var currentSum = getSum();
+	if (currentSum === 25) {
+		var img = document.createElement('img');
+		img.src = 'umCampus.jpg';
+		img.id = 'campusPic'
+		img.style = 'border: 2px solid #51B1B5; max-width: 500px;'
+		document.getElementById('placeholderForCampus').appendChild(img);
+		return true;
+	}
+	else {
+		if elementExists('campusPic') {
+			removeElement('campusPic');
+		}
+		return false;
+	}
+}
+
+function removeElement(elementId) {
+	var element = document.getElementById(elementId);
+	element.parentNode.removeChild(element);
+}
+
+function elementExists(elementId) {
+	var test = document.getElementById(elementId);
+	if (typeof(element) != 'undefined' && element != null){
+		return true;
+	}
+	return false;
 }
 
 function getSum() {
