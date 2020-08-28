@@ -61,8 +61,10 @@ function checkForUM() {
 	}
 	else {
 		if (elementExists('campusPic') == true) {
+			console.log('campusPic exists!')
 			removeElement('campusPic');
 		}
+		console.log('campusPic does not exist');
 		return false;
 	}
 }
@@ -70,6 +72,7 @@ function checkForUM() {
 function removeElement(elementId) {
 	var element = document.getElementById(elementId);
 	element.parentNode.removeChild(element);
+	console.log('campusPic deleted!');
 }
 
 function elementExists(elementId) {
