@@ -53,7 +53,7 @@ function checkForUM() {
 	var currentSum = getSum();
 	if (currentSum === 25) {
 		var img = document.createElement('img');
-		img.src = '/resources/images/umCampus.jpg';
+		img.src = '/resources/images/umCampus.JPG';
 		img.id = 'campusPic'
 		img.style = 'border: 2px solid #51B1B5; max-width: 500px;'
 		document.getElementById('placeholderForCampus').appendChild(img);
