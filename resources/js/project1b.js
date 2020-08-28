@@ -55,16 +55,14 @@ function checkForUM() {
 		var img = document.createElement('img');
 		img.src = '/resources/images/umCampus.JPG';
 		img.id = 'campusPic'
-		img.style = 'border: 2px solid #51B1B5; max-width: 500px;'
+		img.style = 'border: 2px solid #51B1B5; max-width: 500px; margin: 20px;'
 		document.getElementById('placeholderForCampus').appendChild(img);
 		return true;
 	}
 	else {
 		if (elementExists('campusPic') == true) {
-			console.log('campusPic exists!')
 			removeElement('campusPic');
 		}
-		console.log('campusPic does not exist');
 		return false;
 	}
 }
@@ -72,12 +70,11 @@ function checkForUM() {
 function removeElement(elementId) {
 	var element = document.getElementById(elementId);
 	element.parentNode.removeChild(element);
-	console.log('campusPic deleted!');
 }
 
 function elementExists(elementId) {
 	var test = document.getElementById(elementId);
-	if (typeof(element) != 'undefined' && element != null){
+	if (typeof(test) != 'undefined' && test != null){
 		return true;
 	}
 	return false;
