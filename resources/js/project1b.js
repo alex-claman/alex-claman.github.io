@@ -55,7 +55,7 @@ function checkForUM() {
 		var img = document.createElement('img');
 		img.src = '/resources/images/umCampus.JPG';
 		img.id = 'campusPic'
-		img.style = 'border: 2px solid #51B1B5; max-width: 500px; margin: 20px;'
+		img.style = 'border: 2px solid #51B1B5; max-width: 500px; margin-top: 20px; margi-bottom: 20px; margin-left: auto; margin-right: auto;'
 		document.getElementById('placeholderForCampus').appendChild(img);
 		return true;
 	}
