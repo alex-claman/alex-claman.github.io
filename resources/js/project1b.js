@@ -60,7 +60,7 @@ function checkForUM() {
 		return true;
 	}
 	else {
-		if elementExists('campusPic') {
+		if (elementExists('campusPic') == true) {
 			removeElement('campusPic');
 		}
 		return false;
