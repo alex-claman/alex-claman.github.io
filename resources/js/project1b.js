@@ -16,7 +16,7 @@ function updateCanvas(canvasName, ulName, color) {
 	drawAllRectangles(canvasName, color, rectangles);
 	var currentTotal = getSum();
 	var success = checkForUM();
-	if success {
+	if (success == true) {
 		drawTextLowerLeft('(19)25', 40, canvasName, color);
 	}
 	else {
