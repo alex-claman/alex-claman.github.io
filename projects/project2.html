@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>CSC401 - Practicum</title>
+		<link rel='stylesheet' type="text/css" href='/resources/css/project2.css'>
+		<link rel="icon" type="image/png" href="/resources/images/favicon.png">
+		<script type="text/javascript" src='/resources/js/project2.js'></script>
+	</head>
+	<body onload="changeAlgoLength(10)">
+		<h1>
+			CSC 401 - Algorithms Practicum
+		</h1>
+		<hr>
+		<p class='body-text'>
+			This is my practice website, constructed using HTML, CSS, and JavaScript, to create visualizations of the algorithms we use in class.
+		</p>
+		<hr>
+		<h2 class='header'>
+			Project 2: Randomize-In-Place
+		</h2>
+		<p class='body-text'>
+			This is a visualization of the Randomize-In-Place algorithm. You are able to move stepwise through an implementation of the algorithm with arrays of variable length. The pseudocode will help you figure out where in the algorithm you are. Enjoy!
+		</p>
+		<!-- Buttons to Control Model -->
+		<div id='vertical-buttons'>
+			<button onclick='nextAlgoStep()'>Next Step</button>
+			<button onclick='restartAlgo()'>Reset</button>
+			<div class="dropdown">
+				<button class="dropbtn">Length</button>
+					<div class="dropdown-content">
+						<a onclick="changeAlgoLength(3)">3</a>
+						<a onclick="changeAlgoLength(5)">5</a>
+						<a onclick="changeAlgoLength(10)">10</a>
+						<a onclick="changeAlgoLength(15)">15</a>
+					</div>
+			</div>
+		</div>
+		<!-- Model -->
+		<table id='algoArray'>
+			<tr id='algoArrayRow'>
+				<th>1</th>
+				<th>2</th>
+				<th>3</th>
+				<th>4</th>
+				<th>5</th>
+				<th>6</th>
+				<th>7</th>
+				<th>8</th>
+				<th>9</th>
+				<th>10</th>
+			</tr>
+		</table>
+		<div class='center-table'>
+			<!-- Pseudocode -->
+			<div id='left'>
+				<h2>
+					RandomizeInPlace()
+				</h2>
+				<p>
+					1 &nbsp; &nbsp; <span id='first-step'>n = A.length</span>
+				</p>
+				<p>
+					2 &nbsp; &nbsp; for i = 1 to n
+				</p>
+				<p>
+					3 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span id='swap-step'>swap A[i]</span> with <span id='random-step'>A[Random(i, n)]</span>
+				</p>
+			</div>
+			<!-- Variables -->
+			<div id='right'>
+				<h2>
+					Variables
+				</h2>
+				<p>
+					<span id='n'>n = </span>
+				</p>
+				<p>
+					<span id='i'>i = </span>
+				</p>
+				<p>
+					<span id='random'>Random(i, n) = </span>
+				</p>
+			</div>
+		</div>
+		<hr>
+		<ul>
+			<li><a href="/index.html">Home</a></li>
+			<li><a href="/projects/project1a">Project 1A</a></li>
+			<li><a href="/projects/project1b">Project 1B</a></li>
+			<li><a class='active' href="/projects/project2">Project 2</a></li>
+			<li><a href="/error.html">Project 3</a></li>
+		</ul>
+	</body>
+</html>
