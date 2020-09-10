@@ -28,21 +28,22 @@
 			<button onclick='autorun()'>Autorun</button>
 			<button onclick='pauseAutorun()'>Stop</button>
 			<div class="dropdown">
+				<button class="dropbtn">Speed</button>
+					<div class="dropdown-content">
+						<a onclick="changeSpeed(100)">0.1s/step</a>
+						<a onclick="changeSpeed(300)">0.3s/step</a>
+						<a onclick="changeSpeed(500)">0.5s/step</a>
+						<a onclick="changeSpeed(800)">0.8s/step</a>
+						<a onclick="changeSpeed(1000)">1s/step</a>
+					</div>
+			</div>
+			<div class="dropdown">
 				<button class="dropbtn">Length</button>
 					<div class="dropdown-content">
 						<a onclick="changeAlgoLength(3)">3</a>
 						<a onclick="changeAlgoLength(5)">5</a>
 						<a onclick="changeAlgoLength(10)">10</a>
 						<a onclick="changeAlgoLength(15)">15</a>
-					</div>
-			</div>
-			<div class="dropdown">
-				<button class="dropbtn">Speed</button>
-					<div class="dropdown-content">
-						<a onclick="changeSpeed(300)">0.3s/step</a>
-						<a onclick="changeSpeed(500)">0.5s/step</a>
-						<a onclick="changeSpeed(800)">0.8s/step</a>
-						<a onclick="changeSpeed(1000)">1s/step</a>
 					</div>
 			</div>
 		</div>
