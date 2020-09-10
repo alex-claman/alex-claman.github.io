@@ -38,8 +38,11 @@ function restartAlgo() {
 	window.random = undefined;
 	window.inLoop = false;
 	window.rStep = true;
+	// Method calls
+	pauseAutorun();
 	createArray();
 	updateArray();
+	// Reset variables
 	var iHolder = document.getElementById('i');
 	iHolder.innerHTML = 'i = ';
 	var nHolder = document.getElementById('n');
