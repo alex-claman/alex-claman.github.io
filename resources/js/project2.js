@@ -1,4 +1,26 @@
+async function autorun() {
+	window.stopAutorun = false;
+	for (var i = 0; i < (2 * window.algoLength + 2); i++) {
+		nextAlgoStep();
+		if (window.stopAutorun == true) {
+			return;
+		}
+		await sleep(window.speed);
+	}
+}
+
+function pauseAutorun() {
+	window.stopAutorun = true;
+}
+
+function changeSpeed(newSpeed) {
+	window.speed = newSpeed;
+}
+
 function changeAlgoLength(newLength) {
+	if (window.speed == undefined) {
+		window.speed = 800; 
+	}
 	window.algoLength = newLength;
 	restartAlgo(newLength);
 }
@@ -154,4 +176,8 @@ function createArray() {
 		tempArr[tempArr.length] = i + 1;
 	}
 	window.arr = tempArr;
+}
+
+function sleep(ms) {
+  return new Promise(resolve => setTimeout(resolve, ms));
 }
