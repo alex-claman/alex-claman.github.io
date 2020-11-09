@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>CSC401 - Practicum</title>
+		<link rel='stylesheet' type="text/css" href='/resources/css/project3.css'>
+		<link rel="icon" type="image/png" href="/resources/images/favicon.png">
+		<script type="text/javascript" src='/resources/js/hashtable.js'></script>
+		<script type="text/javascript" src='/resources/js/project3.js'></script>
+	</head>
+	<body onload="changeTableLength(10); changeSpeed(800);">
+		<h1>
+			CSC 401 - Algorithms Practicum
+		</h1>
+		<hr>
+		<p class='body-text'>
+			This is my practice website, constructed using HTML, CSS, and JavaScript, to create visualizations of the algorithms we use in class.
+		</p>
+		<hr>
+		<h2 class='header'>
+			Project 3: Hash Table
+		</h2>
+		<p class='body-text'>
+			This is a visualization of a hash table using double hashing. You can add, remove, and fully empty the table, as well as change its length. I also implemented a stepwise add function which can be run at variable speed so that you can see the indicies being checked by the algorithm. Please note that the hash functions I used are scalable and not constrained to/based on a specific table length. As such, the table will fill quickly depending on the value input. Typically, a rehash function would be used in these cases; I wrote such a function into my hashtable but did not implement it to keep the table size limited for aesthetic purposes. Enjoy!
+		</p>
+		<!-- Buttons to Control Model -->
+		<div id='vertical-buttons'>
+			<input type="text" id="tableInput" value="-"/>
+   			<button onclick="addFromTableInput()">Add To Table</button>
+   			<button onclick="newAddFromTableInput()">Stepwise Add</button>
+   			<button onclick="removeFromTableInput()">Remove From Table</button>
+   			<button onclick='clearTable()'>Clear Table</button>
+			<div class="dropdown">
+				<button class="dropbtn">Length</button>
+					<div class="dropdown-content">
+						<a onclick="changeTableLength(5)">5</a>
+						<a onclick="changeTableLength(10)">10</a>
+						<a onclick="changeTableLength(16)">16</a>
+						<a onclick="changeTableLength(20)">20</a>
+					</div>
+			</div>
+			<div class="dropdown">
+				<button class="dropbtn">Speed</button>
+					<div class="dropdown-content">
+						<a onclick="changeSpeed(300)">0.3s/step</a>
+						<a onclick="changeSpeed(500)">0.5s/step</a>
+						<a onclick="changeSpeed(800)">0.8s/step</a>
+						<a onclick="changeSpeed(1000)">1s/step</a>
+					</div>
+			</div>
+		</div>
+		<!-- Model -->
+		<table id='algoArray'>
+			<tr id='algoArrayRow'>
+				<th>-</th>
+				<th>-</th>
+				<th>-</th>
+				<th>-</th>
+				<th>-</th>
+				<th>-</th>
+				<th>-</th>
+				<th>-</th>
+				<th>-</th>
+				<th>-</th>
+			</tr>
+		</table>
+		<div class='center-table'>
+			<!-- Pseudocode -->
+			<div id='left'>
+				<h2>
+					Hash Functions
+				</h2>
+				<p>
+					<span>Hash1: key % tableLength</span>
+				</p>
+				<p>
+					<span>Hash2: 1 + key % (tableLength - 1)</span>
+				</p>
+				<p>
+					<span>FullHash: (Hash1 + (iteration x Hash2)) % tableLength</span>
+				</p>
+			</div>
+			<!-- Variables -->
+			<div id='right'>
+				<h2>
+					Variables
+				</h2>
+				<p>
+					<span id='iterations'>Iterations: </span>
+				</p>
+				<p>
+					<span id='hash1'>Hash1: </span>
+				</p>
+				<p>
+					<span id='hash2'>Hash2: </span>
+				</p>
+				<p>
+					<span id='fullhash'>FullHash: </span>
+				</p>
+			</div>
+		</div>
+		<hr>
+		<ul>
+			<li><a href="/index.html">Home</a></li>
+			<li><a href="/projects/project1a">Project 1A</a></li>
+			<li><a href="/projects/project1b">Project 1B</a></li>
+			<li><a href="/projects/project2">Project 2</a></li>
+			<li><a class='active' href="/project3.html">Project 3</a></li>
+		</ul>
+	</body>
+</html>
