@@ -38,11 +38,8 @@ function restartAlgo() {
 	window.random = undefined;
 	window.inLoop = false;
 	window.rStep = true;
-	// Method calls
-	pauseAutorun();
 	createArray();
 	updateArray();
-	// Reset variables
 	var iHolder = document.getElementById('i');
 	iHolder.innerHTML = 'i = ';
 	var nHolder = document.getElementById('n');
@@ -57,14 +54,15 @@ function nextAlgoStep() {
 		window.inLoop = true;
 	}
 	else {
-		// update pseudocode and end if window.i > window.algoLength - 1
-		if (window.i > window.algoLength - 1) {
+		// update pseudocode and end if window.i > window.algoLength - 2
+		if (window.i > window.algoLength - 2) {
 			var fStep = document.getElementById('first-step');
 			fStep.style = '';
 			var sStep = document.getElementById('swap-step');
 			sStep.style = '';
 			var rStep = document.getElementById('random-step');
 			rStep.style = '';
+			updateArray();
 			return;
 		}
 		else {
@@ -96,11 +94,6 @@ function nextLoopStep() {
 function randomStep() {
 	// Do the random part
 	var randomVal = getRandomInt(window.i, window.algoLength - 1);
-	for (var j = 0; j < 5; j++) {
-		if (randomVal <= window.i) {
-			randomVal = getRandomInt(window.i, window.algoLength - 1);
-		}
-	}
 	window.random = randomVal;
 	// Update random notifier
 	var randomHolder = document.getElementById('random');
@@ -149,13 +142,17 @@ function updateArray() {
 		algoArrayCell.innerHTML = window.arr[i];
 		if (window.i !== undefined && i == window.i) {
 			algoArrayCell.style.backgroundColor = '#51B1B5';
-			algoArrayCell.style.color = 'white'
+			algoArrayCell.style.color = 'white';
 		}
 		if (window.random !== undefined && i == window.random) {
 			algoArrayCell.style.backgroundColor = '#fcaee6';
 		}
 		if (window.i !== undefined && i < window.i) {
 			algoArrayCell.style.backgroundColor = '#a1edf0';
+		}
+		if (window.i !== undefined && window.i == window.algoLength - 1) {
+			algoArrayCell.style.backgroundColor = '#a1edf0';
+			algoArrayCell.style.color = 'black';
 		}
 		algoArrayRow.appendChild(algoArrayCell);
 	}
@@ -170,7 +167,7 @@ function removeAllChildNodes(parent) {
 }
 
 function getRandomInt(min, max) { 
-	return Math.floor(Math.random() * (max - min + 1) + min); 
+	return Math.floor(Math.random() * (max - min)) + min + 1; 
 }
 
 function createArray() {
